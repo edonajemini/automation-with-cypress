@@ -5,12 +5,20 @@ describe('Working with inputs',()=>{
     // })
     it('should load login page',()=>{
         cy.visit('http://zero.webappsecurity.com/login.html')
+        //should fil username
         cy.get('#user_login').clear()
-        cy.get('#user_login').type('some invalid name')
+        cy.get('#user_login').type('some invalid name',{ delay:50})
+        //should fill password
         cy.get('#user_password').clear()
-        cy.get('#user_password').type('Some invalid password')
-        cy.contains('Sign In').click()
+        cy.get('#user_password').type('Some invalid password',{ delay:50})
+        //should mark checkbox
+        cy.get('input[type="checkbox"]').click()
+        cy.wait(3000)
+        //should submit login form
+        cy.contains('Sign in').click()
+        //should display error message
         cy.get('.alert-error').should('be.visible')
+       
     })
 
 })
