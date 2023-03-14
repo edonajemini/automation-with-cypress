@@ -11,6 +11,7 @@ describe('Working with inputs',()=>{
         cy.visit('http://zero.webappsecurity.com/login.html')
         cy.clearCookies({ log: true })
         cy.clearLocalStorage('your item', {log:true})
+        cy.title().should('include','Zero - Log in')
         //should fil username
         cy.get('#user_login').clear()
         cy.get('#user_login').type('some invalid name',{ delay:50})

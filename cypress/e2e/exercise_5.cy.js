@@ -9,5 +9,19 @@ describe('Device Tests',()=>{
         cy.visit('http://www.example.com')
         cy.wait(2000)
     })
-    
+    it('Iphone X',()=>{
+        cy.viewport('iphone-x')
+        cy.visit('http://www.example.com')
+        cy.wait(2000)
+    })
+    it('iPad Mini',()=>{
+        cy.viewport('ipad-mini')
+        cy.visit('http://www.example.com')
+        cy.wait(2000)
+    })
+    it('Macbook 15',()=>{
+        cy.viewport('macbook-15')
+        cy.visit('http://www.example.com')
+        cy.wait(2000)
+    })
 })
